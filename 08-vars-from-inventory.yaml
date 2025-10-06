@@ -5,4 +5,10 @@
   - name: print course info
     ansible.builtin.debug:
      msg: "COURSE name is: {{ COURSE }}, Duration is: {{ DURATION }}, trainer is: {{ TRAINER }}"
-     
+
+# 1. args or command line
+# 2. from task
+# 3. files
+# 4. prompt
+# 5. play level
+# 6. inventory

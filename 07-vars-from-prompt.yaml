@@ -12,3 +12,11 @@
     - name: print credentials
       ansible.builtin.debug:
          msg: "Hello, Username is: {{ username }}, Password is: {{ password }}"
+
+
+# 1. args or command line
+# 2. from task
+# 3. files
+# 4. prompt
+# 5. play level
+# 6. inventory
