@@ -7,5 +7,7 @@
     TRAINER: SIVA
   tasks:
     - name: print the course info
+      vars:
+        COURSE: Ansible # defining task level variable
       ansible.builtin.debug:
         msg: "COURSE name is: {{ COURSE }}, Duration is: {{ DURATION }}, Trainer is: {{ TRAINER }}"
