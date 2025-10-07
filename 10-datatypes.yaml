@@ -1,0 +1,23 @@
+- name: datatypes
+  hosts: local
+  connection: local
+  vars:
+    COURSE: "DevOps with AWS" #string
+    DURATION: 120 #nUMBER
+    IS_LIVE: TRUE #BOOLEAN
+
+    #LIST
+    TOOLS: #[ "aws", "linux", "Docker", "Jenkins" ] you can use it either ways
+    - AWS
+    - linux
+    - "Docker"
+    - "Jenkins"
+    #MAP
+    CONCEPTS:
+      CLOUD: AWS
+      CICD: JENKINS
+      CONTAINERS: DOCKER
+  tasks:
+    - name: print the datatypes
+      ansible.builtin.debug:
+        msg: "Course name is: {{ COURSE }}, DURATION is {{ DURATION }}, is it LIVE: {{ IS_LIVE }}, Tools are: {{ TOOLS }}, Concepts covered: {{ CONCEPTS }}"
