@@ -2,7 +2,7 @@
   hosts: localhost
   connection: local #ansible is connecting to localhost, need to update in inventory file
   vars:
-    COURSE: DEVOPS WITH AWS
+    COURSE: DEVOPS WITH AWS #defined in play level as well
     DURATION: 4 MONTHS
     TRAINER: SIVA
   tasks:
@@ -12,7 +12,8 @@
       ansible.builtin.debug:
         msg: "COURSE name is: {{ COURSE }}, Duration is: {{ DURATION }}, Trainer is: {{ TRAINER }}"
 
-
+#Here it prints task level variable as per order of preference
+ 
 #Order of variable priority
 
 # 1. args or command line
