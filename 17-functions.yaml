@@ -1,0 +1,9 @@
+- name: functions
+  hosts: local
+  connection: local
+  vars:
+    technologies: Cloud, CICD, Monitoring, Containers #string
+  tasks: #converting string to list
+    - name: convert string into list
+      ansible.builtin.debug:
+       msg: " technologies are: {{ technologies | split(',') }}"
