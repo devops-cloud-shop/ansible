@@ -38,4 +38,4 @@
 
     - name: check IP is valid or not  # here it throws error - need (pip3.9 install netaddr) 
       ansible.builtin.debug: 
-        msg: "{{ ipaddress | ansible.utils.ipv4 }}"
+        msg: "ipaddress is :{{ ipaddress | ansible.utils.ipv4 }}"
