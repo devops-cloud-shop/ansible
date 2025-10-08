@@ -7,3 +7,6 @@
     - name: convert string into list
       ansible.builtin.debug:
        msg: " technologies are: {{ technologies | split(',') }}"
+    - name: default variable
+      ansible.builtin.debug:
+        msg: "Hello my name is {{ name | default('Sam') }}"
