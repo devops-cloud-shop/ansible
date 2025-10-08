@@ -4,7 +4,7 @@
   vars:
     name: "SIVa KUMAR reddy" #converting to uppercase
     gmail: "PRAV.akula@GMAIL.com" #converting to lowercase
-    ipaddress: "123344.567.0.43" #checking IP addr valid or not
+    ipaddress: "196.234.0.43" #checking IP addr valid or not
     tags:
       - key: application
         value: payment
