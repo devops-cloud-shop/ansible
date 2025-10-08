@@ -15,7 +15,7 @@
   - name: redirect the output # using command module throws an error, but we can handle error by including ignore_errors as true.
     ansible.builtin.command: ls -ltr > /tmp/output.txt
     register: redirect_output
-    #ignore_errors: true
+    ignore_errors: true #error handling - playbook proceeds to next tasks
 
   - name: print redirect_output
     ansible.builtin.debug:
