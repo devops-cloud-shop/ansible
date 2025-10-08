@@ -2,6 +2,9 @@
   hosts: local
   connection: local
   vars:
+    name: "SIVa KUMAR reddy" #converting to uppercase
+    gmail: "PRAV.akula@GMAIL.com" #converting to lowercase
+    ipaddress: "1233.567.0.43" #checking IP addr valid or not
     tags:
       - key: application
         value: payment
@@ -10,4 +13,29 @@
   tasks:
     - name: convert list to dict/map
       ansible.builtin.debug:
-        msg: " Details are: {{ tags | items2dict }}"
+        msg: " Details are: {{ tags | items2dict }}" #converting list to dict/map
+
+    - name: read yaml and take it into variable
+      ansible.builtin.set_fact:
+      student_yaml: "{{ lookup('file', 'student.yaml') | from_yaml }}" # setfact loads the data in the student.yaml file to variable student_yaml
+
+    - name: convert yaml into json
+      ansible.builtin.debug:
+      msg: "json: {{ student_yaml | to_json  }}"
+
+    - name: save json to file
+      ansible.builtin.copy:
+      dest: ./stundent-data.json
+      content: "{{ student_yaml | to_nice_json  }}"
+
+    - name: convert uppercase
+      ansible.builtin.debug:
+      msg: "{{ name | upper }}"
+
+    - name: convert lowercase
+      ansible.builtin.debug:
+      msg: "{{ gmail | lower }}"
+
+    - name: check IP is valid or not
+      ansible.builtin.debug: 
+      msg: "{{ ipaddress | ansible.utils.ipv4 }}"
