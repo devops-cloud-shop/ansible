@@ -3,10 +3,17 @@
   connection: local
   vars:
     technologies: Cloud, CICD, Monitoring, Containers #string
-  tasks: #converting string to list
+    tags: #converting dict/map to list
+    Application: payment
+    Environment: dev
+  tasks: 
     - name: convert string into list
       ansible.builtin.debug:
-       msg: " technologies are: {{ technologies | split(',') }}"
+       msg: " technologies are: {{ technologies | split(',') }}" #converting string to list
     - name: default variable
       ansible.builtin.debug:
         msg: "Hello my name is {{ name | default('Sam') }}"
+    - name: convert dict to list 
+      ansible.builtin.debug:
+        msg: "tags are: {{ tags | dict2items }}" #converting dict/map to list
+
