@@ -1,0 +1,8 @@
+#checking if the user exists or not
+- name: user creation
+  hosts: local
+  connection: local
+  tasks:
+  - name: check user exists or not
+    ansible.builtin.command: id roboshop
+    register: user_output
