@@ -4,8 +4,8 @@
   vars:
     technologies: Cloud, CICD, Monitoring, Containers #string
     tags: #converting dict/map to list
-    Application: payment
-    Environment: dev
+      Application: payment
+      Environment: dev
   tasks: 
     - name: convert string into list
       ansible.builtin.debug:
